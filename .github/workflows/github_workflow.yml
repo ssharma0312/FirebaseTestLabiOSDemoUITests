@@ -15,8 +15,8 @@ jobs:
 
     - name: Prepare Test Build
       run: |
-      chmod +x prepareTestBuild.sh
-      ./prepareTestBuild-rdc.sh
+        chmod +x prepareTestBuild.sh
+        ./prepareTestBuild-rdc.sh
 
     - name: Decode GCP Service Account Key
       env:
