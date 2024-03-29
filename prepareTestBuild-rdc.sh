@@ -1,15 +1,13 @@
 #!/bin/bash
-
 # Prepare the testing builds
 xcodebuild \
-  build-for-testing \
+  clean build-for-testing \
   -project FirebaseTestLabiOSDemo.xcodeproj \
   -scheme "FirebaseTestLabiOSDemo" \
   -sdk iphoneos \
   -configuration Debug \
   -derivedDataPath './customFolder-rdc' \
   -allowProvisioningUpdates
-  DEVELOPMENT_TEAM="$DEVELOPMENT_TEAM_ID" \
 
 # Define the base directory for builds
 buildDir="customFolder-rdc/Build/Products"

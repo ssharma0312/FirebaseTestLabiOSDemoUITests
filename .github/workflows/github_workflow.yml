@@ -6,11 +6,11 @@ on:
       - main
 
 jobs:
-  test-on-firebase:
-    name: Test on Firebase Test Lab
+  test:
     runs-on: macos-latest
+    
     steps:
-    - name: Checkout Code
+    - name: Checkout code
       uses: actions/checkout@v4
 
     - name: Prepare Test Build
