@@ -22,7 +22,7 @@ jobs:
       run: echo "$GCP_SERVICE_ACCOUNT_KEY" | base64 -d > $HOME/gcp-service-account-key.json
 
     - name: Install Google Cloud SDK
-      uses: google-github-actions/setup-gcloud@master
+      uses: google-github-actions/setup-gcloud@v2
       with:
         project_id: ${{ secrets.FIREBASE_PROJECT_ID }}
         service_account_key_file: $HOME/gcp-service-account-key.json
