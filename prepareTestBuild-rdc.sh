@@ -9,7 +9,7 @@ xcodebuild \
   -configuration Debug \
   -derivedDataPath './customFolder-rdc' \
   -allowProvisioningUpdates
-  DEVELOPMENT_TEAM="{Your_Dev_Team_Id}" \
+  DEVELOPMENT_TEAM="$DEVELOPMENT_TEAM_ID" \
 
 # Define the base directory for builds
 buildDir="customFolder-rdc/Build/Products"

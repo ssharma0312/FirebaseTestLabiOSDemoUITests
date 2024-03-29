@@ -11,9 +11,11 @@ jobs:
     runs-on: macos-latest
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Prepare Test Build
+      env:
+        DEVELOPMENT_TEAM_ID: ${{ secrets.DEVELOPMENT_TEAM }}
       run: |
         chmod +x prepareTestBuild-rdc.sh
         ./prepareTestBuild-rdc.sh
