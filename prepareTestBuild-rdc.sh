@@ -1,5 +1,9 @@
 #!/bin/bash
 # Prepare the testing builds
+DEVELOPMENT_TEAM="H265B27P7N"
+CODE_SIGN_IDENTITY="Apple Development: sahilsharma0312@icloud.com (V36ZTJ35JR)"
+PROVISIONING_PROFILE_SPECIFIER="8c3a280b-dd70-4e37-8f6f-fa8533376357"
+  
 xcodebuild \
   clean build-for-testing \
   -project FirebaseTestLabiOSDemo.xcodeproj \
@@ -7,9 +11,10 @@ xcodebuild \
   -sdk iphoneos \
   -configuration Debug \
   -derivedDataPath './customFolder-rdc' \
-  DEVELOPMENT_TEAM="$DEVELOPMENT_TEAM" \
-  CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" \
-  PROVISIONING_PROFILE_SPECIFIER="$PROVISIONING_PROFILE_SPECIFIER"
+  -allowProvisioningUpdates
+  # DEVELOPMENT_TEAM="$DEVELOPMENT_TEAM" \
+  # CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" \
+  # PROVISIONING_PROFILE_SPECIFIER="$PROVISIONING_PROFILE_SPECIFIER"
 
 # Define the base directory for builds
 buildDir="customFolder-rdc/Build/Products"
