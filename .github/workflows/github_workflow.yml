@@ -1,3 +1,10 @@
+name: Firebase Test Lab
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   test-on-firebase:
     name: Test on Firebase Test Lab
