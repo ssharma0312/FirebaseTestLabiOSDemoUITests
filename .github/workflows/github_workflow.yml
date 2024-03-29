@@ -8,10 +8,26 @@ on:
 jobs:
   test:
     runs-on: macos-latest
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+
+    - name: Setup Code Signing
+      env:
+        APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+        PROVISIONING_PROFILE: ${{ secrets.PROVISIONING_PROFILE }}
+        CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
+      run: |
+        echo "$APPLE_CERTIFICATE" | base64 --decode > ./certificate.p12
+        echo "$PROVISIONING_PROFILE" | base64 --decode > ./profile.mobileprovision
+        security create-keychain -p "" build.keychain
+        security import ./certificate.p12 -t agg -k ~/Library/Keychains/build.keychain -P "$CERTIFICATE_PASSWORD" -A
+        security list-keychains -s ~/Library/Keychains/build.keychain
+        security default-keychain -s ~/Library/Keychains/build.keychain
+        security unlock-keychain -p "" ~/Library/Keychains/build.keychain
+        mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+        cp ./profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
     - name: Prepare Test Build
       env:
