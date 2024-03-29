@@ -31,7 +31,9 @@ jobs:
 
     - name: Prepare Test Build
       env:
-        DEVELOPMENT_TEAM_ID: ${{ secrets.DEVELOPMENT_TEAM }}
+        DEVELOPMENT_TEAM: ${{ secrets.DEVELOPMENT_TEAM }}
+        CODE_SIGN_IDENTITY: ${{ secrets.CODE_SIGN_IDENTITY }}
+        PROVISIONING_PROFILE_SPECIFIER: ${{ secrets.PROVISIONING_PROFILE_SPECIFIER }}s
       run: |
         chmod +x prepareTestBuild-rdc.sh
         ./prepareTestBuild-rdc.sh

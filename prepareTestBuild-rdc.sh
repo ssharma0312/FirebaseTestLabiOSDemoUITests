@@ -7,7 +7,9 @@ xcodebuild \
   -sdk iphoneos \
   -configuration Debug \
   -derivedDataPath './customFolder-rdc' \
-  -allowProvisioningUpdates
+  DEVELOPMENT_TEAM="$DEVELOPMENT_TEAM" \
+  CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" \
+  PROVISIONING_PROFILE_SPECIFIER="$PROVISIONING_PROFILE_SPECIFIER"
 
 # Define the base directory for builds
 buildDir="customFolder-rdc/Build/Products"
