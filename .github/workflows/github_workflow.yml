@@ -40,7 +40,6 @@ jobs:
       env:
         DEVELOPMENT_TEAM: ${{ secrets.DEVELOPMENT_TEAM }}
         CODE_SIGN_IDENTITY: ${{ secrets.CODE_SIGN_IDENTITY }}
-        #PROVISIONING_PROFILE_SPECIFIER: ${{ secrets.PROVISIONING_PROFILE_SPECIFIER }}s
       run: |
         chmod +x prepareTestBuild-rdc.sh
         ./prepareTestBuild-rdc.sh
@@ -57,6 +56,9 @@ jobs:
         service_account_key_file: $HOME/gcp-service-account-key.json
         export_default_credentials: true
     
+    - name: Activate GCP Service Account
+      run: gcloud auth activate-service-account --key-file=$HOME/gcp-service-account-key.json
+
     - name: Run Tests on Firebase Test Lab
       run: |
         gcloud firebase test ios run --test AppsToTest-rdc/FirebaseDemoTests.zip \

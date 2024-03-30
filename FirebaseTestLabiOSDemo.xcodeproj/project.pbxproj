@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CF6BC1162BB3D0AA005C120B /* FirebaseTestLabiOSDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BC1152BB3D0AA005C120B /* FirebaseTestLabiOSDemoApp.swift */; };
-		CF6BC1182BB3D0AA005C120B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BC1172BB3D0AA005C120B /* ContentView.swift */; };
 		CF6BC11A2BB3D0AB005C120B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF6BC1192BB3D0AB005C120B /* Assets.xcassets */; };
 		CF6BC11D2BB3D0AB005C120B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF6BC11C2BB3D0AB005C120B /* Preview Assets.xcassets */; };
 		CF6BC1332BB3D0AB005C120B /* LaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BC1322BB3D0AB005C120B /* LaunchTests.swift */; };
@@ -34,7 +33,6 @@
 /* Begin PBXFileReference section */
 		CF6BC1122BB3D0AA005C120B /* FirebaseTestLabiOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseTestLabiOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6BC1152BB3D0AA005C120B /* FirebaseTestLabiOSDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTestLabiOSDemoApp.swift; sourceTree = "<group>"; };
-		CF6BC1172BB3D0AA005C120B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CF6BC1192BB3D0AB005C120B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF6BC11C2BB3D0AB005C120B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CF6BC12C2BB3D0AB005C120B /* FirebaseTestLabiOSDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseTestLabiOSDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				CF6BC1152BB3D0AA005C120B /* FirebaseTestLabiOSDemoApp.swift */,
-				CF6BC1172BB3D0AA005C120B /* ContentView.swift */,
 				CF6BC1192BB3D0AB005C120B /* Assets.xcassets */,
 				CF6BC13F2BB3D10C005C120B /* LoginUIView.swift */,
 				CF6BC1412BB3D12E005C120B /* ListUIView.swift */,
@@ -221,7 +218,6 @@
 				CF6BC1442BB3D142005C120B /* AddPropertyUIView.swift in Sources */,
 				CF6BC1422BB3D12E005C120B /* ListUIView.swift in Sources */,
 				CF6BC1402BB3D10C005C120B /* LoginUIView.swift in Sources */,
-				CF6BC1182BB3D0AA005C120B /* ContentView.swift in Sources */,
 				CF6BC1162BB3D0AA005C120B /* FirebaseTestLabiOSDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
