@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct AccountCardUIView: View {
     var item: (String, String, String, String)
     
