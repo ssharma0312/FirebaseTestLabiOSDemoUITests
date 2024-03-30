@@ -7,9 +7,9 @@ on:
 
 jobs:
   test:
-    # runs-on: macos-latest
+    runs-on: macos-latest
     # runs-on: macos-13
-    runs-on: macos-14
+    #runs-on: macos-14
 
     steps:
     - uses: maxim-lobanov/setup-xcode@v1
