@@ -57,7 +57,7 @@ jobs:
       run: echo "$GCP_SERVICE_ACCOUNT_KEY" | base64 -d > $HOME/gcp-service-account-key.json
 
     - name: Login to Google Cloud
-      uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      uses: GoogleCloudPlatform/github-actions/setup-gcloud@v2.1.0
       with:
         service_account_key: ${{ secrets.GCLOUD_AUTH }}
         project_id: fir-testlabiosdemo
