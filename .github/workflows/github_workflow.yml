@@ -7,9 +7,14 @@ on:
 
 jobs:
   test:
-    runs-on: macos-latest
+    #runs-on: macos-latest
+    runs-on: macos-13
 
     steps:
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '14.3.1'
+
     - name: Checkout code
       uses: actions/checkout@v4
 
@@ -35,6 +40,8 @@ jobs:
         cp ./profile2.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
         cp ./profile3.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
+    - name: Print Xcode version
+      run: xcodebuild -version
 
     - name: Prepare Test Build
       env:
@@ -49,16 +56,14 @@ jobs:
         GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
       run: echo "$GCP_SERVICE_ACCOUNT_KEY" | base64 -d > $HOME/gcp-service-account-key.json
 
-    - id: 'auth'
-      uses: 'google-github-actions/auth@v2'
-      with:
-        credentials_json: $HOME/gcp-service-account-key.json
+    - name: Login to Google Cloud
+      uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      with: 
+        version: `270.0.0` 
+        service_account_key: ${{ secrets.GCLOUD_AUTH }}
 
-    - name: 'Set up Cloud SDK'
-      uses: 'google-github-actions/setup-gcloud@v2'
-
-    - name: 'Use gcloud CLI'
-      run: 'gcloud info'
+    - name: Set current project
+      run: gcloud config set project ${{ secrets.FIREBASE_PROJECT_ID }}
 
     - name: Run Tests on Firebase Test Lab
       run: |
