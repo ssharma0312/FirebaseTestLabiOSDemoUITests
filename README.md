@@ -16,8 +16,15 @@ To get started with this project and run the tests on Firebase Test Lab via GitH
 1. **Fork or clone this repository** to your GitHub account.
 2. **Set up Firebase Test Lab**: Ensure you have a Firebase project set up and have enabled Firebase Test Lab. You will need to configure your GitHub repository with secrets for authentication.
 3. **Configure GitHub Secrets**: Go to your repository's Settings > Secrets and add the following secrets:
-   - `FIREBASE_PROJECT_ID`: Your Firebase Project ID.
-   - `GCP_SERVICE_ACCOUNT_KEY`: Base64 encoded private key of Google Service Account.
+   - `FIREBASE_PROJECT_ID`: Your Firebase Project ID
+   - `GCP_CREDENTIALS`: Private key of Google Service Account
+   - `DEVELOPMENT_TEAM`: Your development team ID in XCode
+   - `CODE_SIGN_IDENTITY`: Your signing identity set in XCode
+   - `APPLE_CERTIFICATE`: Base64 encoded Apple Development Certificate exported as .p12
+   - `CERTIFICATE_PASSWORD`: Password choosen when exporting the dev certificate
+   - `PROVISIONING_PROFILE_1`: Base64 encoded provisioning profile for your project
+   - `PROVISIONING_PROFILE_2`: Base64 encoded provisioning profile for your project
+   - `PROVISIONING_PROFILE_3`: Base64 encoded provisioning profile for your project
 4. **Push changes to trigger the workflow**: Any push to the repository will trigger the GitHub Actions workflow defined in `.github/workflows/github_workflow.yml`, which builds the app, prepares test artifacts, and runs the tests on Firebase Test Lab.
 
 ## Workflow Details
