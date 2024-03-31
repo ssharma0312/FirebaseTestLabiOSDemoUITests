@@ -3,9 +3,9 @@
 
 # Xcode
 *.swiftpm
-*.xcodeproj/
 xcuserdata/
 DerivedData/
 build/
 artifacts/
 customFolder/
+customFolder-rdc/

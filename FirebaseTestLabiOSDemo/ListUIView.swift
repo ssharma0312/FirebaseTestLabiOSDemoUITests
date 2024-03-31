@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct AccountCardUIView: View {
     var item: (String, String, String, String)
     
@@ -76,12 +74,14 @@ struct ListUIView: View {
             }
             .navigationTitle("Rental Properties")
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Add") {
                         showingAddScreen.toggle()
                     }
                 }
             }
+            
+            
             
             .sheet(isPresented: $showingAddScreen) {
                 AddPropertyUIView()

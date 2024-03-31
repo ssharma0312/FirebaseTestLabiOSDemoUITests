@@ -38,6 +38,11 @@ struct AddPropertyUIView: View {
     }
 }
 
-#Preview {
-    AddPropertyUIView()
+#if DEBUG
+struct AddPropertyUIView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddPropertyUIView()
+    }
 }
+#endif
+
